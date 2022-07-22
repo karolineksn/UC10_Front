@@ -1,4 +1,12 @@
 {
+  "users": [
+    {
+      "email": "karol@email.com",
+      "password": "12345",
+      "nome": "Karol",
+      "id": 1
+    }
+  ],
   "noticias": [
     {
       "id": 1,
