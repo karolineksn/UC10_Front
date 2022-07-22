@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -14,23 +14,19 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  loginModel = new User('', '');
-  
+  loginModel = new User("", "");
+
+  onSubit(){
+    console.log(this.loginModel)
+
+    this.loginService.login(this.loginModel).subscribe((Response)=>{
+      console.log(Response)
+    })
+  }
   userModel = new User("", "") 
 
   onSubmit(){
     console.log(this.userModel)
   }
-
-}
-
-
-onSubmit(){
-  console.log(this.loginModel)
-
-  this.loginService.login(this.loginModel).subscribe((response)=> {
-    console.log(response)
-  })
-}
 
 }
